@@ -1,4 +1,4 @@
-import masks
+from src.masks import get_mask_card_number,get_mask_account
 
 
 def mask_account_card(cards_accounts: str) -> str:
@@ -9,9 +9,9 @@ def mask_account_card(cards_accounts: str) -> str:
         if velue.isalpha():
             mask_cards_account.append(velue)
         if velue.isdigit() and len(velue) == 16:
-            mask_cards_account.append(masks.get_mask_card_number(velue))
+            mask_cards_account.append(get_mask_card_number(velue))
         if velue.isdigit() and len(velue) > 16:
-            mask_cards_account.append(masks.get_mask_account(velue))
+            mask_cards_account.append(get_mask_account(velue))
     return " ".join(mask_cards_account)
 
 
