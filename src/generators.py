@@ -1,12 +1,11 @@
-
 def filter_by_currency(transactions, currency="USD"):
     """Функция возвращает итератор, который поочередно выдает транзакции, где валюта операции USD"""
     return filter(lambda x: x["operationAmount"]["currency"]["code"] == currency, transactions)
 
 
 def transaction_description(transactions):
-    """ Функция-генератор, которая принимает список словарей
-     с транзакциями и возвращает описание каждой операции по очереди"""
+    """Функция-генератор, которая принимает список словарей
+    с транзакциями и возвращает описание каждой операции по очереди"""
     for transaction in transactions:
         yield transaction["description"]
 
