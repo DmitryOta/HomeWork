@@ -1,7 +1,7 @@
 from typing import Any, Callable
 
 
-def log(filename: str ="") -> Callable:
+def log(filename: str = "") -> Callable:
     """ Функция декоратор которая логирует начало и конец выполнения функции,
      а также ее результаты или возникшие ошибки."""
     def wrapper(func: Callable) -> Callable:
