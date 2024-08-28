@@ -60,3 +60,8 @@ def input_transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
+@pytest.fixture
+def input_json():
+    return '[{"name": "Dmitry", "age": 30, "profession": "Phyton"}]'
