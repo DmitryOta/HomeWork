@@ -1,16 +1,19 @@
-def filter_by_currency(transactions, currency="USD"):
+from typing import Iterator, Generator
+
+
+def filter_by_currency(transactions: list[dict], currency: str = "USD") -> Iterator:
     """Функция возвращает итератор, который поочередно выдает транзакции, где валюта операции USD"""
     return filter(lambda x: x["operationAmount"]["currency"]["code"] == currency, transactions)
 
 
-def transaction_description(transactions):
+def transaction_description(transactions: list[dict]) -> Generator:
     """Функция-генератор, которая принимает список словарей
     с транзакциями и возвращает описание каждой операции по очереди"""
     for transaction in transactions:
         yield transaction["description"]
 
 
-def card_number_generator(start=1, stop=10000000000000000):
+def card_number_generator(start: int = 1, stop: int = 10000000000000000) -> Generator:
     """Функция-генератор , которая выдает номера банковских карт в формате XXXX XXXX XXXX XXXX
     , где X — цифра номера карты. Генератор может сгенерировать номера карт в заданном диапазоне
     от 0000 0000 0000 0001 до 9999 9999 9999 9999"""
