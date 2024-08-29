@@ -14,7 +14,5 @@ def unpacking_json(WEY_TO_FILE: str) -> list[dict]:
                 return operation_list
             else:
                 return data
-        except FileNotFoundError:
-            return operation_list
-        except json.JSONDecodeError:
+        except (FileNotFoundError, json.JSONDecodeError):
             return operation_list
