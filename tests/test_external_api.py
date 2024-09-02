@@ -28,7 +28,7 @@ def test_get_amount_transaction():
 
 
 def test_get_amount_transaction_empty():
-    assert get_amount_transaction([]) == False
+    assert get_amount_transaction({}) == False
 
 
 def test_get_amount_transaction_error():
