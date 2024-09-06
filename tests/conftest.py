@@ -61,6 +61,7 @@ def input_transactions():
         },
     ]
 
+
 @pytest.fixture
 def input_get_transaction():
     return {
