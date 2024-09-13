@@ -30,10 +30,6 @@ def get_mask_card_number(number: str) -> str:
 def get_mask_account(account_num: str) -> str:
     """Функция возвращает маску для счета"""
     logging.info("Начало работы функции")
-    if account_num.isdigit():
-        mask_account = "**" + account_num[-4:]
-        logging.info("Окончание работы функции")
-        return mask_account
-    else:
-        logging.error("неверный номер")
-        return "В номере присутстуют буквы"
+    mask_account = "**" + account_num[-4:]
+    logging.info("Окончание работы функции")
+    return mask_account
