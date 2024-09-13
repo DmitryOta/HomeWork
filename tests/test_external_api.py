@@ -28,7 +28,7 @@ def test_get_amount_transaction():
 
 
 def test_get_amount_transaction_empty():
-    assert get_amount_transaction({}) == False
+    assert get_amount_transaction({}) is False
 
 
 def test_get_amount_transaction_error():
@@ -45,4 +45,4 @@ def test_get_amount_transaction_error():
 
     with patch("requests.get", return_value=mock_response):
         result = get_amount_transaction(transaction)
-        assert result == False
+        assert result is False

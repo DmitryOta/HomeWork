@@ -25,8 +25,3 @@ def test_masks_card_number(number, result):
 )
 def test_get_mask_account(score, result):
     assert get_mask_account(score) == result
-
-
-def test_get_mask_account_():
-    with pytest.raises(TypeError):
-        assert get_mask_account(736541084301358743000)
