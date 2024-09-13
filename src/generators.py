@@ -1,7 +1,7 @@
 from typing import Generator, Iterator
 
 
-def filter_by_currency(transactions: list[dict], currency: str = "USD") -> Iterator:
+def filter_by_currency(transactions: list[dict], currency: str) -> Iterator:
     """Функция возвращает итератор, который поочередно выдает транзакции, где валюта операции USD"""
     return filter(lambda x: x["operationAmount"]["currency"]["code"] == currency, transactions)
 
