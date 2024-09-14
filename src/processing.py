@@ -2,7 +2,7 @@ def filter_by_state(list_dict: list, state: str = "EXECUTED") -> list:
     """Функция возвращает отсортированый список словарей по ключю 'state'"""
     new_list = []
     for i in list_dict:
-        if i["state"] == state:
+        if i.get("state") == state:
             new_list.append(i)
     return new_list
 

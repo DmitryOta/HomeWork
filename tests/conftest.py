@@ -70,3 +70,22 @@ def input_get_transaction():
         "date": "2019-08-26T10:50:58.294041",
         "operationAmount": {"amount": "31957.58", "currency": {"name": "руб.", "code": "USD"}},
     }
+
+
+@pytest.fixture
+def get_list_transaction():
+    return [
+        {"id": 1, "date": "2023-04-05", "description": "Покупка продуктов в магазине 'Пятёрочка'", "amount": 1000},
+        {"id": 2, "date": "2023-04-06", "description": "Оплата услуг ЖКХ", "amount": 3000},
+        {"id": 3, "date": "2023-04-07", "description": "Заправка автомобиля на АЗС 'Лукойл'", "amount": 2000},
+    ]
+
+
+@pytest.fixture
+def get_list_categories():
+    return ["магазин", "оплата", "бензин"]
+
+
+@pytest.fixture
+def get_search_bar():
+    return "Покупка"
