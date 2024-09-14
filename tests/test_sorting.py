@@ -8,4 +8,6 @@ def test_count_categories(get_list_transaction, get_list_categories):
 
 
 def test_sorting_transactions(get_list_transaction, get_search_bar):
-    assert sorting_transactions(get_list_transaction, get_search_bar) == ["Покупка продуктов в магазине 'Пятёрочка'"]
+    assert sorting_transactions(get_list_transaction, get_search_bar) == [
+        {"id": 1, "date": "2023-04-05", "description": "Покупка продуктов в магазине 'Пятёрочка'", "amount": 1000}
+    ]

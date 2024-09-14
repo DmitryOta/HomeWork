@@ -7,15 +7,15 @@ def sorting_transactions(transactoins: list[dict], search_bar: str) -> list[dict
     список словарей, у которых в описании есть данная строка"""
     pattern = re.compile(search_bar.lower())
     result = []
-    for transactoin in transactoins:
-        if pattern.search(transactoin["description"].lower()):
-            result.append(transactoin["description"])
+    for transaction in transactoins:
+        if pattern.search(transaction["description"].lower()):
+            result.append(transaction)
     return result
 
 
 def count_categories(transactions: list[dict], categories: list) -> dict:
     """Функция принимает список словарей с данными о банковских операциях и список категорий операций, и возвращает
-     словарь, где ключами являются названия категорий, а значениями — количество операций в каждой категории.
+    словарь, где ключами являются названия категорий, а значениями — количество операций в каждой категории.
     """
     category_counts = []
 
